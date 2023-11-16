@@ -14,7 +14,7 @@ def entry_page(request, title):
     content = util.get_entry(title)
     if content is None:
         return render(request, "encyclopedia/error.html", {
-            "error_message": "Page not found"
+            "error_message": "Page not found! Feel free to create it. "
         })
     
 
@@ -49,7 +49,7 @@ def new_page(request):
         existing_entry = util.get_entry(title)
         if existing_entry:
             return render(request, "encyclopedia/error.html", {
-                "error_message": "An entry You tried to create already exists. Edit that one or create another."
+                "error_message": "The Wiki Page You have tried to create already exists. Edit that one or create another."
             })
 
         util.save_entry(title, content)

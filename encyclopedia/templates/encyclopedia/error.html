@@ -4,6 +4,10 @@
 {% endblock title %}
 {% block body %}
     <body>
-        <h1>{{ error_message }}</h1>
+        <h1>
+            {{ error_message }}
+            <br>
+            <a href="{% url 'new_page' %}">Create the Page!</a>
+        </h1>
     </body>
 {% endblock body %}
